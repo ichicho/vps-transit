@@ -111,7 +111,7 @@ reconfigure() {
     comment="${comment}\n${records_end}"
     rules="${rules}\nCOMMIT"
     sed 's/'"${nat_comment}"'/'"${comment}"'\n'"${rules}"'/' ${beforerules_template} > ${beforerules_now}
-    reboot
+    /sbin/shutdown -r now
 }
 add_record() {
     for port in ${ports//,/ }; do
